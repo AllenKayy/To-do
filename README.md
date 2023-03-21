@@ -4,7 +4,7 @@ HTML, CSS and JS.
 
 ## Live site here
 
-[Preview here](https://to-do.netlify.app)
+[Todo App](https://mysimple-todo-app.netlify.app)
 
 ## Create a simple todo list that has the following functionalities:
 
