@@ -16,22 +16,20 @@ body {
 
 div.wrapper {
     margin: 100px auto;
-    max-width: 700px;
+    max-width: 600px;
     width: 100%;
     padding: 25px;
     background-color: rgb(241, 241, 241);
     border-radius: 3px;
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     div.wrapper {
-        margin: 10px;
+        margin: 120px auto;
+        max-width: 400px;
     }
 
-    #input {
-
-    }
-} */
+}
 
 header {
     font-size: 30px;
@@ -57,6 +55,7 @@ input#input {
 
 input#input:focus {
     border-color: #e66464c0;
+    opacity: .5;
     border-width: 3px;
 }
 
@@ -80,25 +79,19 @@ span {
 }
 
 .btn {
-    background-color: #7880db;
-    opcity: .8;
+    background-color: #281264dc;
+    opacity: .6;
     color: #fff;
     text-align: center;
     border: none;
-    border-radius: 2px;
+    border-radius: 2.5px;
     cursor: pointer;
+    outline: none;
     transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #281264dc;
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    alin-items: center;
-    margin-top: 20px;
+.btn:active {
+    opacity: 1;
 }
 
 .todo_list>ul>li {
@@ -109,8 +102,20 @@ footer {
     opacity: .5;
 }
 
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+footer>p {
+    font-size: 17px;
+}
+
 .clearbtn {
     width: 70px;
     font-weight: 600;
     padding: 10px 5px;
+    user-select: none;
 }
