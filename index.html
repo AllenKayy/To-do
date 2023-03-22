@@ -11,13 +11,29 @@
 <body>
     <div class="wrapper">
         <header>Todo App</header>
-        <label for="text" class="input">
+
+        <label for="text" class="input_field">
             <input type="text" id="input">
-            <span onfocus="this.placeholder = '' ">Add your new todo</span>
-            <button id="add">
+            <span>Add your new todo</span>
+            <button class="addbtn btn">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </label>
+
+        <div class="todo_list">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>You have <span></span> pending tasks</p>
+            <button class="clearbtn btn">Clear All</button>
+        </footer>
     </div>
 
 
