@@ -12,27 +12,34 @@
     <div class="wrapper">
         <header>Todo App</header>
 
-        <label for="text" class="input_field">
-            <input type="text" id="input">
-            <span>Add your new todo</span>
-            <button class="addbtn btn">
+        <form class="input_field">
+            <input type="text" id="todo_input" placeholder="Add your new todo...">
+            <!-- <span>Add your new todo</span> -->
+            <button type="button" class="addbtn btn" aria-label="Add Todo">
                 <i class="fa-solid fa-plus"></i>
             </button>
-        </label>
+        </form>
+        
+        <!-- Error message here -->
+        <p id="error"></p>
 
-        <div class="todo_list">
-            <ul>
+        <div>
+            <ul class="todo_list">
+                <!-- <li>Add your new todo Add your new todo Add your new todo Add your new todo Add your new todo Add your new todo</li>
                 <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Add your new todo</li>
+                <li>Add your new todo</li>
+                <li>Add your new todo</li>
+                <li>Add your new todo</li>
+                <li>Add your new todo</li>
+                <li>Add your new todo</li>
+                <li>Add your new todo</li> -->
             </ul>
         </div>
 
         <footer>
             <p>You have <span></span> pending tasks</p>
-            <button class="clearbtn btn">Clear All</button>
+            <button type="reset" class="clearAllTodosbtn btn" aria-label="Clear All Todo">Clear All</button>
         </footer>
     </div>
 
