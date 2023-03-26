@@ -24,7 +24,7 @@ div.wrapper {
 
 @media screen and (max-width: 768px) {
     div.wrapper {
-        margin: 120px auto;
+        margin: 90px auto;
         max-width: 90%;
     }
 
