@@ -1,4 +1,4 @@
-// window.onload = loadTasks;
+// window.onload = loadTodos;
 
 const todoInput = document.querySelector('input');
 const addTodoBtn = document.querySelector(".addbtn");
@@ -6,18 +6,6 @@ const error = document.querySelector("#error")
 const todoList = document.querySelector("ul");
 const todoCount = document.querySelector("span")
 const deleteAllTodo = document.querySelector(".clearAllTodosbtn");
-
-// const addBtn = () => {
-//     if(todoInput === null || todoInput.length <= 0) {
-//         addTodo.setAttribute("id", "active");
-//         error.textContent = "Add your Todo!";
-//         console.log(error.textContent = "Add your Todo!");
-//     } else if (todoInput === "") {
-//         // addTodo.setAttribute("id", "active");
-//         addTodo.removeAttribute("id", "active");
-//         console.log("todoInput")
-//     }
-// }
 
 
 // check for stored todos in localStorage
@@ -65,9 +53,10 @@ function addTodo() {
       date: Date.now()
     };
     // error.removeAttribute("id", "error");
-    todos.unshift(todo); // add the new todo to the beginning of the list
-    localStorage.setItem("todos", JSON.stringify(todos)); // update localStorage
-    renderTodos(); // update the todo list on the page
+    todos.unshift(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));  
+    // update the todo list on the page
+    renderTodos();
     todoInput.value = ""; // reset the input field
   } else if (todoText == null) {
     error.textContent = "Add your Todo!";
@@ -82,30 +71,43 @@ function renderTodos() {
     const li = document.createElement("li");
     const todoText = document.createTextNode(todo.text);
     const deleteButton = document.createElement("button");
-    const deleteButtonText = document.createTextNode("X");
-    deleteButton.appendChild(deleteButtonText);
-    deleteButton.style.display = "none";
-    li.appendChild(deleteButton);
+    const deleteIcon = document.createElement("i");
+    deleteIcon.className = "fa-solid fa-trash-can";
+    deleteButton.appendChild(deleteIcon);
     li.appendChild(todoText);
+    li.appendChild(deleteButton);
     todoList.appendChild(li);
+
+    deleteButton.addEventListener("click", function () {
+      todos.splice(i, 1);
+      renderTodos();
+      saveTodos();
+    });
   }
   updateTodoCount();
 }
 
-// function to delete a todo
+/**
+ * // function to delete a todo
 function deleteTodo(todoItem) {
   const index = Array.from(todoList.children).indexOf(todoItem);
-  todos.splice(index, 1); // remove the todo from the list
-  localStorage.setItem("todos", JSON.stringify(todos)); // update localStorage
-  todoItem.remove(); // remove the todo from the page
+  // remove the todo from the list
+  todos.splice(index, 1); 
+  // update localStorage
+  localStorage.setItem("todos", JSON.stringify(todos)); 
+  // remove the todo from the page
+  todoItem.remove(); 
   updateTodoCount();
-}
+} 
+**/
 
 // function to clear all todos
 function clearTodos() {
   todos = [];
-  localStorage.setItem("todos", JSON.stringify(todos)); // update localStorage
-  renderTodos(); // update the todo list on the page
+  // update localStorage
+  localStorage.setItem("todos", JSON.stringify(todos));
+  // update the todo list on the page
+  renderTodos(); 
 }
 
 // function to update the todo count in the footer

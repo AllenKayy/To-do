@@ -38,7 +38,7 @@ header {
 .input_field {
     display: flex;
     gap: 7px;
-    margin: 20px 0;
+    margin: 20px 0 30px;
     height: 40px;
 }
 
@@ -58,7 +58,7 @@ input#todo_input:focus {
     border-width: 3px;
 }
 
-span {
+/* span {
     position: absolute;
     padding-left: 10px;
     padding-top: 8px;
@@ -69,7 +69,7 @@ span {
 #todo_input:focus ~ span {
     display: none;
     transition: .3s ease-in-out;
-}
+} */
 
 .addbtn {
     width: 48px;
@@ -102,10 +102,43 @@ span {
     position: relative;
     min-height: 40px;
     line-height: 23px;
-    padding: 8px 12px;
+    padding-left:12px;
     margin-bottom: 12px;
     background: #e0dddd;
+    border-radius: 3px;
     cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li>button {
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: #281264dc;
+    border-end-end-radius: 3px;
+    border-start-end-radius: 3px;
+    opacity: .6;
+    background-color: #ce3f3f;
+}
+
+li>button>i {
+    width: 100%;
+}
+
+li>button {
+    display: none;
+}
+
+li:hover button {
+    display: block;
+}
+
+li>button:focus {
+    opacity: 1;
 }
 
 footer {
