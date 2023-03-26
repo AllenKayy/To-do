@@ -46,20 +46,20 @@ deleteAllTodo.addEventListener("click", clearTodos);
 // function to add a todo
 function addTodo() {
   const todoText = todoInput.value.trim();
+  error.textContent = " "
   if (todoText !== "") {
     const todo = {
       text: todoText,
       completed: false,
       date: Date.now()
     };
-    // error.removeAttribute("id", "error");
     todos.unshift(todo);
     localStorage.setItem("todos", JSON.stringify(todos));  
     // update the todo list on the page
     renderTodos();
     todoInput.value = ""; // reset the input field
-  } else if (todoText == null) {
-    error.textContent = "Add your Todo!";
+  } else {
+    error.textContent = "Add your Todo! 😒";
   }
 }
 

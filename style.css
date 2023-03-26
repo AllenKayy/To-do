@@ -38,7 +38,7 @@ header {
 .input_field {
     display: flex;
     gap: 7px;
-    margin: 20px 0 30px;
+    margin: 20px 0 25px;
     height: 40px;
 }
 
@@ -110,6 +110,10 @@ input#todo_input:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.todo_list:first-child {
+    margin-top: 10px;
 }
 
 li>button {
