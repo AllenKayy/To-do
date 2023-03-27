@@ -24,10 +24,9 @@ div.wrapper {
 
 @media screen and (max-width: 768px) {
     div.wrapper {
-        margin: 90px auto;
+        margin: 80px auto;
         max-width: 90%;
     }
-
 }
 
 header {
@@ -94,7 +93,6 @@ input#todo_input:focus {
 .todo_list {
     overflow: auto;
     max-height: 250px;
-    
 }
 
 .todo_list>li {
@@ -116,32 +114,36 @@ input#todo_input:focus {
     margin-top: 10px;
 }
 
-li>button {
+li div button{
     border: none;
     font-size: 20px;
     cursor: pointer;
     width: 40px;
     height: 40px;
     color: #281264dc;
-    border-end-end-radius: 3px;
-    border-start-end-radius: 3px;
     opacity: .6;
     background-color: #ce3f3f;
 }
 
-li>button>i {
+li div>button:last-child {
+    margin-left: 4px;
+    border-end-end-radius: 3px;
+    border-start-end-radius: 3px;
+}
+
+li div>button i{
     width: 100%;
 }
 
-li>button {
+li button {
     display: none;
 }
 
 li:hover button {
-    display: block;
+    display: inline-block;
 }
 
-li>button:focus {
+li div>button:focus {
     opacity: 1;
 }
 
